@@ -28,7 +28,7 @@ export default function Home() {
       )}
 
       <div className="absolute flex flex-col items-center lg:items-start gap-8 w-full h-fit px-4 lg:px-48 m-auto left-0 right-0 top-0 bottom-0 ">
-        <p className="text-zinc-400 tracking-[1rem] text-xl lg:text-2xl">
+        <p className="text-zinc-400 tracking-[1rem] text-xl lg:text-2xl text-center">
           ALEX JACHNA PRESENTS
         </p>
         <p className="text-zinc-800 font-dmSerif text-8xl lg:text-9xl text-center">

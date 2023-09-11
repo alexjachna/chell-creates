@@ -1,8 +1,13 @@
 import React, { useEffect, useState } from "react";
 import menu from "../assets/menu.png";
+import about from "../assets/about.png";
+import contact from "../assets/contact.png";
+import galleries from "../assets/galleries.png";
+import myGallery from "../assets/my-gallery.png";
 
 export default function Navbar() {
   const [size, setSize] = useState(window.innerWidth);
+  const [showNav, setShowNav] = useState(false);
 
   useEffect(() => {
     function handleResize() {
@@ -28,8 +33,45 @@ export default function Navbar() {
           <p>Contact</p>
         </nav>
       ) : (
-        <img src={menu} alt="hamburger menu" className="w-10" />
+        <img
+          src={menu}
+          onClick={() => setShowNav(!showNav)}
+          alt="hamburger menu"
+          className="w-10"
+        />
       )}
+      <div
+        className={
+          "absolute top-0 w-screen h-screen transition-all duration-500 " +
+          (showNav ? "left-0" : "left-[-100%]")
+        }
+      >
+        <div className="absolute flex flex-col gap-4 top-0 left-0 w-3/4 h-screen p-4 bg-zinc-100">
+          <p className="text-zinc-800 font-dmSerif text-5xl">chell creates.</p>
+
+          <div className="flex gap-4 p-4 border-b-4 border-t-4">
+            <img src={myGallery} alt="" className="w-6" />
+            <p>Your gallery</p>
+          </div>
+
+          <div className="flex gap-4 p-4">
+            <img src={galleries} alt="" className="w-6" />
+            <p>Galleries</p>
+          </div>
+          <div className="flex gap-4 p-4">
+            <img src={about} alt="" className="w-6" />
+            <p>About</p>
+          </div>
+          <div className="flex gap-4 p-4">
+            <img src={contact} alt="" className="w-6" />
+            <p>Contact</p>
+          </div>
+        </div>
+        <div
+          className="absolute top-0 right-0 w-1/4 h-screen"
+          onClick={() => setShowNav(!showNav)}
+        ></div>
+      </div>
     </div>
   );
 }
