@@ -14,4 +14,9 @@
   -webkit-text-size-adjust: 100%;
 }
 
-
+#hero-image {
+  background-image: url(./assets/redwoods.jpg);
+  background-position: center;
+  background-size: cover;
+  opacity: 0.3;
+}

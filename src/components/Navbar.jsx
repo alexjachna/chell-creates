@@ -27,10 +27,11 @@ export default function Navbar() {
         chell creates.
       </p>
       {size >= 1024 ? (
-        <nav className="flex gap-8 text-zinc-800 font-bold">
+        <nav className="flex items-center gap-8 text-zinc-800 font-bold">
           <p>Galleries</p>
           <p>About</p>
           <p>Contact</p>
+          <img src={myGallery} alt="" className="h-8 px-8 border-l-2" />
         </nav>
       ) : (
         <img
