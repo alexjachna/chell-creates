@@ -4,28 +4,19 @@ import about from "../assets/about.png";
 import contact from "../assets/contact.png";
 import galleries from "../assets/galleries.png";
 import myGallery from "../assets/my-gallery.png";
+import { Link } from "react-router-dom";
 
-export default function Navbar() {
-  const [size, setSize] = useState(window.innerWidth);
+export default function Navbar({ size }) {
   const [showNav, setShowNav] = useState(false);
-
-  useEffect(() => {
-    function handleResize() {
-      setSize(window.innerWidth);
-    }
-
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, [window.innerWidth]);
 
   return (
     <div className="fixed flex justify-evenly items-center w-full h-20 bg-zinc-50 shadow-sm z-10">
-      <p className="text-zinc-800 font-dmSerif text-3xl border-b border-b-zinc-500">
-        chell creates.
-      </p>
+      <Link to="/chell-creates/">
+        <p className="text-zinc-800 font-dmSerif text-3xl border-b border-b-zinc-500">
+          chell creates.
+        </p>
+      </Link>
+
       {size >= 1024 ? (
         <nav className="flex items-center gap-8 text-zinc-800 font-bold">
           <p>Galleries</p>

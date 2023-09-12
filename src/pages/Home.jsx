@@ -1,47 +1,34 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import Navbar from "../components/Navbar";
 import resize from "../assets/resize.png";
 import pause from "../assets/pause.png";
 
-export default function Home() {
-  const [size, setSize] = useState(window.innerWidth);
-  const [bg, setBg] = useState(null);
-
-  useEffect(() => {
-    function handleResize() {
-      setSize(window.innerWidth);
-    }
-
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, [window.innerWidth]);
-
+export default function Home({ size }) {
   return (
-    <div className="relative flex w-full h-screen">
-      <Navbar />
+    <div className="relative w-full h-screen">
+      <Navbar size={size} />
       {size >= 1024 && (
-        <>
-          <div
-            className={
-              "h-full left-0 transition-all duration-1000 bg-zinc-50 " +
-              (bg ? "w-full" : "w-1/2")
-            }
-          ></div>
-          <div
-            id="hero-image"
-            className={
-              "h-full right-0 transition-all duration-1000 " +
-              (!bg ? "w-full" : "w-1/2")
-            }
-          ></div>
-        </>
+        <motion.div
+          initial={{ width: "40%" }}
+          animate={{ width: "60%" }}
+          exit={{
+            width: "60%",
+          }}
+          id="hero-image"
+          className={
+            "absolute h-full right-0 transition-all duration-1000 bg-zinc-50"
+          }
+        ></motion.div>
       )}
 
-      <div className="absolute flex flex-col items-center lg:items-start gap-8 w-full h-fit px-4 lg:px-48 m-auto left-0 right-0 top-0 bottom-0 ">
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0, transition: { duration: 0.5 } }}
+        className="absolute flex flex-col items-center lg:items-start gap-8 w-full h-fit px-4 lg:px-48 m-auto left-0 right-0 top-0 bottom-0 "
+      >
         <p className="text-zinc-700 tracking-[1rem] text-xl lg:text-2xl text-center">
           ALEX JACHNA PRESENTS
         </p>
@@ -88,7 +75,7 @@ export default function Home() {
         <button className="bg-purple-400 hover:bg-purple-500 transition-all p-4 w-40 text-white rounded-sm shadow-md">
           View Galleries
         </button>
-      </div>
+      </motion.div>
 
       {size >= 1024 && (
         <div className="absolute flex justify-center items-center gap-2 bottom-3 right-5 rounded-sm w-24 h-12">
@@ -97,7 +84,6 @@ export default function Home() {
             alt=""
             title="Resize Image"
             className="h-9 p-1 opacity-20 transition-all hover:cursor-pointer hover:opacity-80"
-            onClick={() => setBg(!bg)}
           />
           <img
             src={pause}
