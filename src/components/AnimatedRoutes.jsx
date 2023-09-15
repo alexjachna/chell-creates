@@ -24,8 +24,8 @@ export default function AnimatedRoutes() {
   return (
     <AnimatePresence mode="wait">
       <Routes location={location} key={location.pathname}>
-        <Route path="/chell-creates/" element={<Home size={size} />} />
-        <Route path="/galleries/" element={<Galleries size={size} />} />
+        <Route path="/" element={<Home size={size} />} />
+        <Route path="/galleries" element={<Galleries size={size} />} />
       </Routes>
     </AnimatePresence>
   );

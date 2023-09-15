@@ -3,6 +3,22 @@ import { Navigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import Navbar from "../components/Navbar";
 import Photoshoot from "../components/Photoshoot";
+import Footer from "../components/Footer";
+import p1 from "../assets/p1.jpg";
+import p2 from "../assets/p2.jpg";
+import p3 from "../assets/p3.jpg";
+import p4 from "../assets/p4.jpg";
+import p5 from "../assets/p5.jpg";
+import p6 from "../assets/p6.jpg";
+
+const myGalleries = [
+  { id: 1, image: p1, photoshootTitle: "photoshoot 1" },
+  { id: 2, image: p2, photoshootTitle: "photoshoot 2" },
+  { id: 3, image: p3, photoshootTitle: "photoshoot 3" },
+  { id: 4, image: p4, photoshootTitle: "photoshoot 4" },
+  { id: 5, image: p5, photoshootTitle: "photoshoot 5" },
+  { id: 6, image: p6, photoshootTitle: "photoshoot 6" },
+];
 
 export default function Galleries({ size }) {
   return (
@@ -10,15 +26,15 @@ export default function Galleries({ size }) {
       <Navbar size={size} />
       {size >= 1024 && (
         <motion.div
-          initial={{ width: "60%" }}
-          animate={{ width: "40%" }}
+          initial={{ width: "60%", opacity: 0.3 }}
+          animate={{ width: "40%", opacity: 0.5 }}
           exit={{
             width: "40%",
+            opacity: 0.5,
+            transition: { duration: 1 },
           }}
           id="hero-image"
-          className={
-            "absolute h-full right-0 transition-all duration-1000 bg-zinc-50"
-          }
+          className={"absolute h-full right-0 duration-1000 bg-zinc-50"}
         ></motion.div>
       )}
 
@@ -26,17 +42,32 @@ export default function Galleries({ size }) {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0, transition: { duration: 0.5 } }}
-        className="absolute flex flex-col justify-center items-center gap-6 m-auto top-0 bottom-0 left-0 w-3/5 h-full pt-24"
+        className="flex flex-col justify-center items-center gap-6 w-full lg:w-3/5 h-full py-6 "
       >
-        <p className=" text-black text-7xl font-dmSerif">Photoshoots.</p>
-        <div class="h-screen w-full">
-          <div class="grid grid-cols-2 md:grid-cols-3 grid-rows-3 md:grid-rows-2 gap-4 h-5/6 w-4/5 mx-auto">
-            <Photoshoot />
-            <Photoshoot />
-            <Photoshoot />
-            <Photoshoot />
-            <Photoshoot />
-            <Photoshoot />
+        <p className=" text-black text-6xl lg:text-7xl font-dmSerif">
+          Photoshoots.
+        </p>
+        <div className="h-screen w-full ">
+          <div className="grid grid-cols-2 lg:grid-cols-3 grid-rows-3 lg:grid-rows-2 gap-4 h-5/6 w-4/5 mx-auto">
+            {myGalleries.map((item, i) => (
+              <motion.div
+                key={item.id}
+                id="photoshoot-box"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 1, delay: 1 + i * 0.1 }}
+                className="relative flex justify-center items-center overflow-hidden transition-all durat w-full h-full"
+              >
+                <img
+                  src={item.image}
+                  alt=""
+                  className="object-cover min-w-full min-h-full opacity-80 hover:opacity-100 hover:blur-sm"
+                />
+                <p className="absolute lg:hidden text-zinc-700 text-xl lg:text-3xl font-montserrat">
+                  {item.photoshootTitle}
+                </p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </motion.div>

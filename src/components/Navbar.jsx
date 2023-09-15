@@ -10,7 +10,7 @@ export default function Navbar({ size }) {
   const [showNav, setShowNav] = useState(false);
 
   return (
-    <div className="fixed flex justify-evenly items-center w-full h-20 bg-zinc-50 shadow-sm z-10">
+    <div className="flex justify-evenly items-center w-full h-20 bg-zinc-50 shadow-sm z-10">
       <Link to="/chell-creates/">
         <p className="text-zinc-800 font-dmSerif text-3xl border-b border-b-zinc-500">
           chell creates.
@@ -19,7 +19,10 @@ export default function Navbar({ size }) {
 
       {size >= 1024 ? (
         <nav className="flex items-center gap-8 text-zinc-800 font-bold">
-          <p>Galleries</p>
+          <Link to="/galleries/">
+            <p>Galleries</p>
+          </Link>
+
           <p>About</p>
           <p>Contact</p>
           <img src={myGallery} alt="" className="h-8 px-8 border-l-2" />
@@ -34,7 +37,7 @@ export default function Navbar({ size }) {
       )}
       <div
         className={
-          "absolute top-0 w-screen h-screen transition-all duration-500 " +
+          "absolute top-0 w-screen h-screen transition-all duration-500 z-10 " +
           (showNav ? "left-0" : "left-[-100%]")
         }
       >

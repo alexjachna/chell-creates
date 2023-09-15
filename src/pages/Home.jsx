@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Navbar from "../components/Navbar";
 import resize from "../assets/resize.png";
 import pause from "../assets/pause.png";
+import Footer from "../components/Footer";
 
 export default function Home({ size }) {
   return (
@@ -11,15 +12,15 @@ export default function Home({ size }) {
       <Navbar size={size} />
       {size >= 1024 && (
         <motion.div
-          initial={{ width: "40%" }}
-          animate={{ width: "60%" }}
+          initial={{ width: "40%", opacity: 0.5 }}
+          animate={{ width: "60%", opacity: 0.3 }}
           exit={{
             width: "60%",
+            opacity: 0.3,
+            transition: { duration: 1 },
           }}
           id="hero-image"
-          className={
-            "absolute h-full right-0 transition-all duration-1000 bg-zinc-50"
-          }
+          className={"absolute h-full right-0 duration-1000 bg-zinc-50"}
         ></motion.div>
       )}
 
@@ -39,7 +40,7 @@ export default function Home({ size }) {
           <nav className="flex gap-4 lg:gap-24 xl:gap-48">
             <div className="p-4 w-48">
               <Link
-                to="/galleries/"
+                to="/galleries"
                 className="font-bold text-2xl text-zinc-700 tracking-widest"
               >
                 Galleries
@@ -50,7 +51,7 @@ export default function Home({ size }) {
             </div>
             <div className="p-4 w-48">
               <Link
-                to="/galleries/"
+                to="/galleries"
                 className="font-bold text-2xl text-zinc-700 tracking-widest"
               >
                 About
@@ -72,27 +73,12 @@ export default function Home({ size }) {
             </div>
           </nav>
         )}
-        <button className="bg-purple-400 hover:bg-purple-500 transition-all p-4 w-40 text-white rounded-sm shadow-md">
-          View Galleries
-        </button>
+        <Link to="/galleries/">
+          <button className="bg-purple-400 hover:bg-purple-500 transition-all p-4 w-40 text-white rounded-sm shadow-md">
+            View Galleries
+          </button>
+        </Link>
       </motion.div>
-
-      {size >= 1024 && (
-        <div className="absolute flex justify-center items-center gap-2 bottom-3 right-5 rounded-sm w-24 h-12">
-          <img
-            src={resize}
-            alt=""
-            title="Resize Image"
-            className="h-9 p-1 opacity-20 transition-all hover:cursor-pointer hover:opacity-80"
-          />
-          <img
-            src={pause}
-            alt=""
-            title="Pause Slideshow"
-            className="h-9 p-1 opacity-20 transition-all hover:cursor-pointer hover:opacity-80"
-          />
-        </div>
-      )}
     </div>
   );
 }
