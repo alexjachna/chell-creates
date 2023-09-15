@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import Home from "../pages/Home";
 import Galleries from "../pages/Galleries";
+import Gallery from "../pages/Gallery";
 import { AnimatePresence } from "framer-motion";
 
 export default function AnimatedRoutes() {
@@ -26,6 +27,7 @@ export default function AnimatedRoutes() {
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<Home size={size} />} />
         <Route path="/galleries" element={<Galleries size={size} />} />
+        <Route path="/gallery/:id" element={<Gallery size={size} />} />
       </Routes>
     </AnimatePresence>
   );

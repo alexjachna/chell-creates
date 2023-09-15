@@ -1,5 +1,5 @@
 import React from "react";
-import { Navigate } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import Navbar from "../components/Navbar";
 import Photoshoot from "../components/Photoshoot";
@@ -12,12 +12,12 @@ import p5 from "../assets/p5.jpg";
 import p6 from "../assets/p6.jpg";
 
 const myGalleries = [
-  { id: 1, image: p1, photoshootTitle: "photoshoot 1" },
-  { id: 2, image: p2, photoshootTitle: "photoshoot 2" },
-  { id: 3, image: p3, photoshootTitle: "photoshoot 3" },
-  { id: 4, image: p4, photoshootTitle: "photoshoot 4" },
-  { id: 5, image: p5, photoshootTitle: "photoshoot 5" },
-  { id: 6, image: p6, photoshootTitle: "photoshoot 6" },
+  { id: "photoshoot 1", image: p1 },
+  { id: "photoshoot 2", image: p2 },
+  { id: "photoshoot 3", image: p3 },
+  { id: "photoshoot 4", image: p4 },
+  { id: "photoshoot 5", image: p5 },
+  { id: "photoshoot 6", image: p6 },
 ];
 
 export default function Galleries({ size }) {
@@ -50,23 +50,25 @@ export default function Galleries({ size }) {
         <div className="h-screen w-full ">
           <div className="grid grid-cols-2 lg:grid-cols-3 grid-rows-3 lg:grid-rows-2 gap-4 h-5/6 w-4/5 mx-auto">
             {myGalleries.map((item, i) => (
-              <motion.div
-                key={item.id}
-                id="photoshoot-box"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 1, delay: 1 + i * 0.1 }}
-                className="relative flex justify-center items-center overflow-hidden transition-all durat w-full h-full"
-              >
-                <img
-                  src={item.image}
-                  alt=""
-                  className="object-cover min-w-full min-h-full opacity-80 hover:opacity-100 hover:blur-sm"
-                />
-                <p className="absolute lg:hidden text-zinc-700 text-xl lg:text-3xl font-montserrat">
-                  {item.photoshootTitle}
-                </p>
-              </motion.div>
+              <Link to={`/gallery/${item.id}`}>
+                <motion.div
+                  key={item.id}
+                  id="photoshoot-box"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 1, delay: 1 + i * 0.1 }}
+                  className="relative flex justify-center items-center overflow-hidden transition-all durat w-full h-full"
+                >
+                  <img
+                    src={item.image}
+                    alt=""
+                    className="object-cover min-w-full min-h-full opacity-80 hover:opacity-100 hover:blur-sm"
+                  />
+                  <p className="absolute lg:hidden text-zinc-700 text-xl lg:text-3xl font-montserrat">
+                    {item.id}
+                  </p>
+                </motion.div>
+              </Link>
             ))}
           </div>
         </div>

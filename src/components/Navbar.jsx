@@ -11,7 +11,7 @@ export default function Navbar({ size }) {
 
   return (
     <div className="flex justify-evenly items-center w-full h-20 bg-zinc-50 shadow-sm z-10">
-      <Link to="/chell-creates/">
+      <Link to="/">
         <p className="text-zinc-800 font-dmSerif text-3xl border-b border-b-zinc-500">
           chell creates.
         </p>
@@ -19,7 +19,7 @@ export default function Navbar({ size }) {
 
       {size >= 1024 ? (
         <nav className="flex items-center gap-8 text-zinc-800 font-bold">
-          <Link to="/galleries/">
+          <Link to="/galleries">
             <p>Galleries</p>
           </Link>
 

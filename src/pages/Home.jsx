@@ -2,13 +2,10 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import Navbar from "../components/Navbar";
-import resize from "../assets/resize.png";
-import pause from "../assets/pause.png";
-import Footer from "../components/Footer";
 
 export default function Home({ size }) {
   return (
-    <div className="relative w-full h-screen">
+    <div className="w-full h-screen">
       <Navbar size={size} />
       {size >= 1024 && (
         <motion.div
@@ -62,7 +59,7 @@ export default function Home({ size }) {
             </div>
             <div className="p-4 w-48">
               <Link
-                to="/galleries/"
+                to="/galleries"
                 className="font-bold text-2xl text-zinc-700 tracking-widest"
               >
                 Contact
@@ -73,7 +70,7 @@ export default function Home({ size }) {
             </div>
           </nav>
         )}
-        <Link to="/galleries/">
+        <Link to="/galleries">
           <button className="bg-purple-400 hover:bg-purple-500 transition-all p-4 w-40 text-white rounded-sm shadow-md">
             View Galleries
           </button>
