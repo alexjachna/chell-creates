@@ -2,6 +2,7 @@ import React from "react";
 import { Navigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import Navbar from "../components/Navbar";
+import GalleryImage from "../components/GalleryImage";
 
 export default function Gallery({ size }) {
   return (
@@ -17,7 +18,7 @@ export default function Gallery({ size }) {
             transition: { duration: 1 },
           }}
           id="hero-image"
-          className={"absolute h-full right-0 duration-1000 bg-zinc-50"}
+          className="absolute h-full right-0 duration-1000 bg-zinc-50"
         ></motion.div>
       )}
 
@@ -25,11 +26,31 @@ export default function Gallery({ size }) {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0, transition: { duration: 1 } }}
-        className="flex flex-col justify-center items-center gap-6 w-full lg:w-2/5 h-full py-6 bg-red-200"
+        className="flex flex-col justify-center items-center gap-6 w-full lg:w-2/5 h-full pt-24 "
       >
         <p className=" text-black text-6xl lg:text-7xl font-dmSerif">
           Photoshoot 1
         </p>
+        <div
+          id="gallery-scroll"
+          className="w-fit h-4/5 grid grid-cols-2 lg:grid-cols-3 auto-rows-auto gap-3 overflow-scroll"
+        >
+          <GalleryImage />
+          <GalleryImage />
+          <GalleryImage />
+          <GalleryImage />
+          <GalleryImage />
+          <GalleryImage />
+          <GalleryImage />
+          <GalleryImage />
+          <GalleryImage />
+          <GalleryImage />
+          <GalleryImage />
+          <GalleryImage />
+          <GalleryImage />
+          <GalleryImage />
+          <GalleryImage />
+        </div>
       </motion.div>
     </div>
   );

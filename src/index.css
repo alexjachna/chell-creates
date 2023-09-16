@@ -15,23 +15,11 @@
 }
 
 body::-webkit-scrollbar {
-    width: 12px;
+    width: 0px;
 }
-
-body::-webkit-scrollbar-track {
-    margin-block: .2em;
-}
-
-body::-webkit-scrollbar-thumb {
-    border-radius: 8px;
-    background-clip: padding-box;
-    box-shadow: none;
-    border: 2px solid rgb(250, 250, 250);
-    background: rgb(204, 204, 204);
-}
-
-body::-webkit-scrollbar-track {
-    @apply bg-zinc-50
+ 
+#gallery-scroll::-webkit-scrollbar {
+  width: 0px;
 }
 
 #hero-image {

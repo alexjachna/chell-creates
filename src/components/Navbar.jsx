@@ -10,7 +10,7 @@ export default function Navbar({ size }) {
   const [showNav, setShowNav] = useState(false);
 
   return (
-    <div className="flex justify-evenly items-center w-full h-20 bg-zinc-50 shadow-sm z-10">
+    <div className="fixed flex justify-evenly items-center w-full h-20 bg-zinc-50 shadow-sm z-10">
       <Link to="/">
         <p className="text-zinc-800 font-dmSerif text-3xl border-b border-b-zinc-500">
           chell creates.
