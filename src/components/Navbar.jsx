@@ -6,8 +6,26 @@ import galleries from "../assets/galleries.png";
 import myGallery from "../assets/my-gallery.png";
 import { Link } from "react-router-dom";
 
-export default function Navbar({ size }) {
+export default function Navbar({ size, bgsize, setBgsize, currentPage }) {
   const [showNav, setShowNav] = useState(false);
+
+  switch (currentPage) {
+    case "home":
+      setBgsize("60%");
+      break;
+    case "galleries":
+      setBgsize("40%");
+      break;
+    case "gallery":
+      setBgsize("60%");
+      break;
+    case "about":
+      setBgsize("0%");
+      break;
+    case "contact":
+      setBgsize("0%");
+      break;
+  }
 
   return (
     <div className="fixed flex justify-evenly items-center w-full h-20 bg-zinc-50 shadow-sm z-10">
@@ -22,9 +40,12 @@ export default function Navbar({ size }) {
           <Link to="/galleries">
             <p>Galleries</p>
           </Link>
-
-          <p>About</p>
-          <p>Contact</p>
+          <Link to="/about">
+            <p>About</p>
+          </Link>
+          <Link to="/contact">
+            <p>Contact</p>
+          </Link>
           <img src={myGallery} alt="" className="h-8 px-8 border-l-2" />
         </nav>
       ) : (

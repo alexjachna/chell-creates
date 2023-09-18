@@ -3,13 +3,20 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import Navbar from "../components/Navbar";
 
-export default function Home({ size }) {
+export default function Home({ size, bgsize, setBgsize }) {
+  const currentPage = "home";
+
   return (
     <div className="w-full h-screen">
-      <Navbar size={size} />
+      <Navbar
+        size={size}
+        bgsize={bgsize}
+        setBgsize={setBgsize}
+        currentPage={currentPage}
+      />
       {size >= 1024 && (
         <motion.div
-          initial={{ width: "40%", opacity: 0.5 }}
+          initial={{ width: bgsize, opacity: 0.5 }}
           animate={{ width: "60%", opacity: 0.3 }}
           exit={{
             width: "60%",
@@ -39,6 +46,7 @@ export default function Home({ size }) {
               <Link
                 to="/galleries"
                 className="font-bold text-2xl text-zinc-700 tracking-widest"
+                onClick={() => setBgsize("60%")}
               >
                 Galleries
               </Link>
@@ -48,8 +56,9 @@ export default function Home({ size }) {
             </div>
             <div className="p-4 w-48">
               <Link
-                to="/galleries"
+                to="/about"
                 className="font-bold text-2xl text-zinc-700 tracking-widest"
+                onClick={() => setBgsize("60%")}
               >
                 About
               </Link>
@@ -59,8 +68,9 @@ export default function Home({ size }) {
             </div>
             <div className="p-4 w-48">
               <Link
-                to="/galleries"
+                to="/contact"
                 className="font-bold text-2xl text-zinc-700 tracking-widest"
+                onClick={() => setBgsize("60%")}
               >
                 Contact
               </Link>
@@ -70,7 +80,7 @@ export default function Home({ size }) {
             </div>
           </nav>
         )}
-        <Link to="/galleries">
+        <Link to="/galleries" onClick={() => setBgsize("60%")}>
           <button className="bg-purple-400 hover:bg-purple-500 transition-all p-4 w-40 text-white rounded-sm shadow-md">
             View Galleries
           </button>

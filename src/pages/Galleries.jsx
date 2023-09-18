@@ -20,13 +20,20 @@ const myGalleries = [
   { id: "photoshoot 6", image: p6 },
 ];
 
-export default function Galleries({ size }) {
+export default function Galleries({ size, bgsize, setBgsize }) {
+  const currentPage = "galleries";
+
   return (
     <div className="relative w-full h-screen">
-      <Navbar size={size} />
+      <Navbar
+        size={size}
+        bgsize={bgsize}
+        setBgsize={setBgsize}
+        currentPage={currentPage}
+      />
       {size >= 1024 && (
         <motion.div
-          initial={{ width: "60%", opacity: 0.3 }}
+          initial={{ width: bgsize, opacity: 0.3 }}
           animate={{ width: "40%", opacity: 0.5 }}
           exit={{
             width: "40%",
@@ -42,7 +49,7 @@ export default function Galleries({ size }) {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0, transition: { duration: 0.5 } }}
-        className="flex flex-col justify-center items-center gap-6 w-full lg:w-3/5 h-full py-6 "
+        className="flex flex-col justify-center items-center gap-6 w-full lg:w-3/5 h-full pt-72 lg:pt-28"
       >
         <p className=" text-black text-6xl lg:text-7xl font-dmSerif">
           Photoshoots.

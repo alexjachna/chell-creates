@@ -1,13 +1,19 @@
 import React from "react";
-import { Navigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import Navbar from "../components/Navbar";
 import GalleryImage from "../components/GalleryImage";
 
-export default function Gallery({ size }) {
+export default function Gallery({ size, bgsize, setBgsize }) {
+  const currentPage = "gallery";
+
   return (
     <div className="relative w-full h-screen">
-      <Navbar size={size} />
+      <Navbar
+        size={size}
+        bgsize={bgsize}
+        setBgsize={setBgsize}
+        currentPage={currentPage}
+      />
       {size >= 1024 && (
         <motion.div
           initial={{ width: "40%", opacity: 0.5 }}
@@ -33,8 +39,17 @@ export default function Gallery({ size }) {
         </p>
         <div
           id="gallery-scroll"
-          className="w-fit h-4/5 grid grid-cols-2 lg:grid-cols-3 auto-rows-auto gap-3 overflow-scroll"
+          className="w-fit h-4/5 grid grid-cols-3 lg:grid-cols-3 auto-rows-auto gap-1 overflow-scroll"
         >
+          <GalleryImage />
+          <GalleryImage />
+          <GalleryImage />
+          <GalleryImage />
+          <GalleryImage />
+          <GalleryImage />
+          <GalleryImage />
+          <GalleryImage />
+          <GalleryImage />
           <GalleryImage />
           <GalleryImage />
           <GalleryImage />
