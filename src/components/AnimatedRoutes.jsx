@@ -8,7 +8,7 @@ import Contact from "../pages/Contact";
 import { AnimatePresence } from "framer-motion";
 
 export default function AnimatedRoutes() {
-  const [bgsize, setBgsize] = useState("0%");
+  const [bgsize, setBgsize] = useState({ width: "0%", opacity: 0.3 });
   const [size, setSize] = useState(window.innerWidth);
 
   useEffect(() => {

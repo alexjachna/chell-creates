@@ -16,7 +16,7 @@ export default function Gallery({ size, bgsize, setBgsize }) {
       />
       {size >= 1024 && (
         <motion.div
-          initial={{ width: "40%", opacity: 0.5 }}
+          initial={{ width: bgsize, opacity: 0.5 }}
           animate={{ width: "60%", opacity: 0.8 }}
           exit={{
             width: "60%",

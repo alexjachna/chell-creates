@@ -16,7 +16,7 @@ export default function Home({ size, bgsize, setBgsize }) {
       />
       {size >= 1024 && (
         <motion.div
-          initial={{ width: bgsize, opacity: 0.5 }}
+          initial={{ width: bgsize, opacity: 0.3 }}
           animate={{ width: "60%", opacity: 0.3 }}
           exit={{
             width: "60%",
