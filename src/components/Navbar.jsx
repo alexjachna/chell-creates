@@ -70,18 +70,24 @@ export default function Navbar({ size, bgsize, setBgsize, currentPage }) {
             <p>Your gallery</p>
           </div>
 
-          <div className="flex gap-4 p-4">
-            <img src={galleries} alt="" className="w-6" />
-            <p>Galleries</p>
-          </div>
-          <div className="flex gap-4 p-4">
-            <img src={about} alt="" className="w-6" />
-            <p>About</p>
-          </div>
-          <div className="flex gap-4 p-4">
-            <img src={contact} alt="" className="w-6" />
-            <p>Contact</p>
-          </div>
+          <Link to="/galleries">
+            <div className="flex gap-4 p-4">
+              <img src={galleries} alt="" className="w-6" />
+              <p>Galleries</p>
+            </div>
+          </Link>
+          <Link to="/about">
+            <div className="flex gap-4 p-4">
+              <img src={about} alt="" className="w-6" />
+              <p>About</p>
+            </div>
+          </Link>
+          <Link to="/contact">
+            <div className="flex gap-4 p-4">
+              <img src={contact} alt="" className="w-6" />
+              <p>Contact</p>
+            </div>
+          </Link>
         </div>
         <div
           className="absolute top-0 right-0 w-1/4 h-screen"

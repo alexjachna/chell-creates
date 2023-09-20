@@ -28,24 +28,53 @@ export default function About({ size, bgsize, setBgsize }) {
         ></motion.div>
       )}
 
+      {size >= 1024 && (
+        <motion.div
+          initial={{ width: "0%", opacity: 0.3 }}
+          animate={{ width: "40%", opacity: 0.3 }}
+          exit={{
+            width: "0%",
+            opacity: 0.3,
+            transition: { duration: 0.2 },
+          }}
+          id="about-me-image"
+          className={"absolute h-full left-0 duration-1000 bg-zinc-50"}
+        ></motion.div>
+      )}
+
       <motion.div
         initial={{ opacity: 0 }}
-        animate={{ opacity: 1, transition: { duration: 2, delay: 0.5 } }}
+        animate={{ opacity: 1, transition: { duration: 1, delay: 0.5 } }}
         exit={{ opacity: 0, transition: { duration: 1 } }}
-        className="absolute w-4/5 h-4/5 m-auto left-0 right-0 top-0 bottom-0 flex flex-col gap-4 justify-center items-center"
+        className="absolute right-0 w-full lg:w-3/5 h-full flex flex-col justify-center pl-24 pr-48"
       >
-        <p className="text-black text-5xl font-dmSerif">About me.</p>
-        <div className="flex flex-col items-center lg:flex-row">
-          <img src={profileImg} alt="" className="basis-1/2 w-full max-w-xl" />
-          <p className="basis-1/2 p-12">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque
-            sint nobis tempora voluptates enim quibusdam sit corrupti. Explicabo
-            nobis sequi iure veritatis eum ex similique eius at quibusdam porro
-            beatae alias accusamus, illum labore dignissimos consectetur hic
-            earum consequuntur aliquam nesciunt laboriosam maiores tempora
-            consequatur. Excepturi ad voluptatum fuga. Nam?
+        <motion.p
+          initial={{ x: "-100%" }}
+          animate={{ x: 0, transition: { duration: 1, delay: 0.5 } }}
+          className="text-zinc-800 font-dmSerif text-8xl lg:text-9xl p-4"
+        >
+          about me.
+        </motion.p>
+        <div className="relative ">
+          <span className="absolute top-0 left-0 text-zinc-500 font-thin font-dmSerif text-7xl">
+            "
+          </span>
+          <p className="text-zinc-500 font-thin font-dmSerif text-4xl py-12 text-center">
+            I'm Chell, a Photographer and Cosplayer based in Toronto, Ontario.
           </p>
+          <span className="absolute bottom-0 right-0 text-zinc-500 font-thin font-dmSerif text-7xl">
+            "
+          </span>
         </div>
+
+        <p className="leading-10">
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque sint
+          nobis tempora voluptates enim quibusdam sit corrupti. Explicabo nobis
+          sequi iure veritatis eum ex similique eius at quibusdam porro beatae
+          alias accusamus, illum labore dignissimos consectetur hic earum
+          consequuntur aliquam nesciunt laboriosam maiores tempora consequatur.
+          Excepturi ad voluptatum fuga. Nam?
+        </p>
       </motion.div>
     </div>
   );

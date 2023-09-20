@@ -28,6 +28,12 @@ body::-webkit-scrollbar {
   background-size: cover;
 }
 
+#about-me-image {
+  background-image: url(./assets/profile.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
 #photoshoot-box:hover p {
   display: block;
 }

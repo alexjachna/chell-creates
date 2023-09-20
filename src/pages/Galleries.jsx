@@ -49,7 +49,7 @@ export default function Galleries({ size, bgsize, setBgsize }) {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0, transition: { duration: 0.5 } }}
-        className="flex flex-col justify-center items-center gap-6 w-full lg:w-3/5 h-full pt-72 lg:pt-28"
+        className="flex flex-col justify-center items-center gap-6 w-full lg:w-3/5 h-full pt-24 lg:pt-28"
       >
         <p className=" text-black text-6xl lg:text-7xl font-dmSerif">
           Photoshoots.
