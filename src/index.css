@@ -22,16 +22,21 @@ body::-webkit-scrollbar {
   width: 0px;
 }
 
-#hero-image {
-  background-image: url(./assets/redwoods.jpg);
+#hero-image, #about-me-image, #contact-image {
   background-position: center;
   background-size: cover;
 }
 
+#hero-image {
+  background-image: url(./assets/redwoods.jpg);
+}
+
 #about-me-image {
   background-image: url(./assets/profile.jpg);
-  background-position: center;
-  background-size: cover;
+}
+
+#contact-image {
+  background-image: url(./assets/akali.jpg);
 }
 
 #photoshoot-box:hover p {

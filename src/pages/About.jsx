@@ -3,20 +3,26 @@ import { motion } from "framer-motion";
 import Navbar from "../components/Navbar";
 import profileImg from "../assets/profile.jpg";
 
-export default function About({ size, bgsize, setBgsize }) {
+export default function About({
+  size,
+  bgsize,
+  setBgsize,
+  bgopacity,
+  setBgopacity,
+}) {
   const currentPage = "about";
 
   return (
     <div className="relative w-full h-screen">
       <Navbar
         size={size}
-        bgsize={bgsize}
         setBgsize={setBgsize}
+        setBgopacity={setBgopacity}
         currentPage={currentPage}
       />
       {size >= 1024 && (
         <motion.div
-          initial={{ width: bgsize, opacity: 0.3 }}
+          initial={{ width: bgsize, opacity: bgopacity }}
           animate={{ width: "0%", opacity: 0.3 }}
           exit={{
             width: "0%",
@@ -46,16 +52,26 @@ export default function About({ size, bgsize, setBgsize }) {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1, transition: { duration: 1, delay: 0.5 } }}
         exit={{ opacity: 0, transition: { duration: 1 } }}
-        className="absolute right-0 w-full lg:w-3/5 h-full flex flex-col justify-center pl-24 pr-48"
+        className="absolute my-auto top-0 bottom-0 right-0 w-full lg:w-3/5 h-fit flex flex-col justify-center pt-24 pb-12 px-4 lg:pl-24 lg:pr-48"
       >
         <motion.p
           initial={{ x: "-100%" }}
           animate={{ x: 0, transition: { duration: 1, delay: 0.5 } }}
-          className="text-zinc-800 font-dmSerif text-8xl lg:text-9xl p-4"
+          exit={{ x: "-100%", transition: { duration: 1, delay: 0.3 } }}
+          className="text-zinc-800 font-dmSerif text-7xl lg:text-9xl p-4"
         >
           about me.
         </motion.p>
-        <div className="relative ">
+        <motion.div
+          initial={{ x: "-100%", opacity: 0 }}
+          animate={{ x: 0, opacity: 1, transition: { duration: 1, delay: 1 } }}
+          exit={{
+            x: "-100%",
+            opacity: 0,
+            transition: { duration: 2, delay: 0.5 },
+          }}
+          className="relative "
+        >
           <span className="absolute top-0 left-0 text-zinc-500 font-thin font-dmSerif text-7xl">
             "
           </span>
@@ -65,7 +81,7 @@ export default function About({ size, bgsize, setBgsize }) {
           <span className="absolute bottom-0 right-0 text-zinc-500 font-thin font-dmSerif text-7xl">
             "
           </span>
-        </div>
+        </motion.div>
 
         <p className="leading-10">
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque sint

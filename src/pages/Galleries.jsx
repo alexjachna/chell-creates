@@ -20,20 +20,26 @@ const myGalleries = [
   { id: "photoshoot 6", image: p6 },
 ];
 
-export default function Galleries({ size, bgsize, setBgsize }) {
+export default function Galleries({
+  size,
+  bgsize,
+  setBgsize,
+  bgopacity,
+  setBgopacity,
+}) {
   const currentPage = "galleries";
 
   return (
     <div className="relative w-full h-screen">
       <Navbar
         size={size}
-        bgsize={bgsize}
         setBgsize={setBgsize}
+        setBgopacity={setBgopacity}
         currentPage={currentPage}
       />
       {size >= 1024 && (
         <motion.div
-          initial={{ width: bgsize, opacity: 0.3 }}
+          initial={{ width: bgsize, opacity: bgopacity }}
           animate={{ width: "40%", opacity: 0.5 }}
           exit={{
             width: "40%",
@@ -57,7 +63,13 @@ export default function Galleries({ size, bgsize, setBgsize }) {
         <div className="h-screen w-full ">
           <div className="grid grid-cols-2 lg:grid-cols-3 grid-rows-3 lg:grid-rows-2 gap-4 h-5/6 w-4/5 mx-auto">
             {myGalleries.map((item, i) => (
-              <Link to={`/gallery/${item.id}`}>
+              <Link
+                to={`/gallery/${item.id}`}
+                onClick={() => {
+                  setBgsize("40%");
+                  setBgopacity(0.5);
+                }}
+              >
                 <motion.div
                   key={item.id}
                   id="photoshoot-box"

@@ -6,24 +6,29 @@ import galleries from "../assets/galleries.png";
 import myGallery from "../assets/my-gallery.png";
 import { Link } from "react-router-dom";
 
-export default function Navbar({ size, bgsize, setBgsize, currentPage }) {
+export default function Navbar({ size, setBgsize, setBgopacity, currentPage }) {
   const [showNav, setShowNav] = useState(false);
 
   switch (currentPage) {
     case "home":
       setBgsize("60%");
+      setBgopacity(0.3);
       break;
     case "galleries":
       setBgsize("40%");
+      setBgopacity(0.5);
       break;
     case "gallery":
       setBgsize("60%");
+      setBgopacity(0.8);
       break;
     case "about":
       setBgsize("0%");
+      setBgopacity(0.3);
       break;
     case "contact":
       setBgsize("0%");
+      setBgopacity(0.3);
       break;
   }
 

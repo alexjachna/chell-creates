@@ -8,7 +8,8 @@ import Contact from "../pages/Contact";
 import { AnimatePresence } from "framer-motion";
 
 export default function AnimatedRoutes() {
-  const [bgsize, setBgsize] = useState({ width: "0%", opacity: 0.3 });
+  const [bgsize, setBgsize] = useState("0%");
+  const [bgopacity, setBgopacity] = useState(0.3);
   const [size, setSize] = useState(window.innerWidth);
 
   useEffect(() => {
@@ -29,28 +30,62 @@ export default function AnimatedRoutes() {
       <Routes location={location} key={location.pathname}>
         <Route
           path="/"
-          element={<Home size={size} bgsize={bgsize} setBgsize={setBgsize} />}
+          element={
+            <Home
+              size={size}
+              bgsize={bgsize}
+              setBgsize={setBgsize}
+              bgopacity={bgopacity}
+              setBgopacity={setBgopacity}
+            />
+          }
         />
         <Route
           path="/galleries"
           element={
-            <Galleries size={size} bgsize={bgsize} setBgsize={setBgsize} />
+            <Galleries
+              size={size}
+              bgsize={bgsize}
+              setBgsize={setBgsize}
+              bgopacity={bgopacity}
+              setBgopacity={setBgopacity}
+            />
           }
         />
         <Route
           path="/gallery/:id"
           element={
-            <Gallery size={size} bgsize={bgsize} setBgsize={setBgsize} />
+            <Gallery
+              size={size}
+              bgsize={bgsize}
+              setBgsize={setBgsize}
+              bgopacity={bgopacity}
+              setBgopacity={setBgopacity}
+            />
           }
         />
         <Route
           path="/about"
-          element={<About size={size} bgsize={bgsize} setBgsize={setBgsize} />}
+          element={
+            <About
+              size={size}
+              bgsize={bgsize}
+              setBgsize={setBgsize}
+              bgopacity={bgopacity}
+              setBgopacity={setBgopacity}
+            />
+          }
         />
         <Route
           path="/contact"
           element={
-            <Contact size={size} bgsize={bgsize} setBgsize={setBgsize} />
+            <Contact
+              size={size}
+              bgsize={bgsize}
+              setBgsize={setBgsize}
+              bgopacity={bgopacity}
+              setBgopacity={setBgopacity}
+            />
           }
         />
       </Routes>

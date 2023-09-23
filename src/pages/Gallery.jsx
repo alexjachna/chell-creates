@@ -3,20 +3,26 @@ import { motion } from "framer-motion";
 import Navbar from "../components/Navbar";
 import GalleryImage from "../components/GalleryImage";
 
-export default function Gallery({ size, bgsize, setBgsize }) {
+export default function Gallery({
+  size,
+  bgsize,
+  setBgsize,
+  bgopacity,
+  setBgopacity,
+}) {
   const currentPage = "gallery";
 
   return (
     <div className="relative w-full h-screen">
       <Navbar
         size={size}
-        bgsize={bgsize}
         setBgsize={setBgsize}
+        setBgopacity={setBgopacity}
         currentPage={currentPage}
       />
       {size >= 1024 && (
         <motion.div
-          initial={{ width: bgsize, opacity: 0.5 }}
+          initial={{ width: bgsize, opacity: bgopacity }}
           animate={{ width: "60%", opacity: 0.8 }}
           exit={{
             width: "60%",
