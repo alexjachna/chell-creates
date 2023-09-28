@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import menu from "../assets/menu.png";
 import about from "../assets/about.png";
 import contact from "../assets/contact.png";
+import events from "../assets/events.png";
 import galleries from "../assets/galleries.png";
 import myGallery from "../assets/my-gallery.png";
 import { Link } from "react-router-dom";
@@ -22,6 +23,10 @@ export default function Navbar({ size, setBgsize, setBgopacity, currentPage }) {
       setBgsize("60%");
       setBgopacity(0.8);
       break;
+    case "events":
+      setBgsize("100%");
+      setBgopacity(0.3);
+      break;
     case "about":
       setBgsize("0%");
       setBgopacity(0.3);
@@ -35,7 +40,7 @@ export default function Navbar({ size, setBgsize, setBgopacity, currentPage }) {
   return (
     <div className="fixed flex justify-evenly items-center w-full h-20 bg-zinc-50 shadow-sm z-10">
       <Link to="/">
-        <p className="text-zinc-800 font-dmSerif text-3xl border-b border-b-zinc-500">
+        <p className="text-zinc-800 font-dmSerif text-3xl border-b border-b-zinc-500 ">
           chell creates.
         </p>
       </Link>
@@ -44,6 +49,9 @@ export default function Navbar({ size, setBgsize, setBgopacity, currentPage }) {
         <nav className="flex items-center gap-8 text-zinc-800 font-bold">
           <Link to="/galleries">
             <p>Galleries</p>
+          </Link>
+          <Link to="/events">
+            <p>Events</p>
           </Link>
           <Link to="/about">
             <p>About</p>
@@ -79,6 +87,12 @@ export default function Navbar({ size, setBgsize, setBgopacity, currentPage }) {
             <div className="flex gap-4 p-4">
               <img src={galleries} alt="" className="w-6" />
               <p>Galleries</p>
+            </div>
+          </Link>
+          <Link to="/events">
+            <div className="flex gap-4 p-4">
+              <img src={events} alt="" className="w-6" />
+              <p>Events</p>
             </div>
           </Link>
           <Link to="/about">

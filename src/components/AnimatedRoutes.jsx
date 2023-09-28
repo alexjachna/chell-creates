@@ -3,6 +3,7 @@ import { Route, Routes, useLocation } from "react-router-dom";
 import Home from "../pages/Home";
 import Galleries from "../pages/Galleries";
 import Gallery from "../pages/Gallery";
+import Events from "../pages/Events";
 import About from "../pages/About";
 import Contact from "../pages/Contact";
 import { AnimatePresence } from "framer-motion";
@@ -56,6 +57,18 @@ export default function AnimatedRoutes() {
           path="/gallery/:id"
           element={
             <Gallery
+              size={size}
+              bgsize={bgsize}
+              setBgsize={setBgsize}
+              bgopacity={bgopacity}
+              setBgopacity={setBgopacity}
+            />
+          }
+        />
+        <Route
+          path="/events"
+          element={
+            <Events
               size={size}
               bgsize={bgsize}
               setBgsize={setBgsize}

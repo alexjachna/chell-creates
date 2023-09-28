@@ -47,7 +47,7 @@ export default function Home({
           chell creates media.
         </p>
         {size >= 1024 && (
-          <nav className="flex gap-4 lg:gap-24 xl:gap-48">
+          <nav className="flex lg:gap-12 xl:gap-24">
             <div className="p-4 w-48">
               <Link
                 to="/galleries"
@@ -62,6 +62,19 @@ export default function Home({
               <p className="text-zinc-500">
                 Visit all my photoshoot galleries.
               </p>
+            </div>
+            <div className="p-4 w-48">
+              <Link
+                to="/events"
+                className="font-bold text-2xl text-zinc-700 tracking-widest"
+                onClick={() => {
+                  setBgsize("60%");
+                  setBgopacity(0.3);
+                }}
+              >
+                Events
+              </Link>
+              <p className="text-zinc-500">Follow any Events I attend.</p>
             </div>
             <div className="p-4 w-48">
               <Link
