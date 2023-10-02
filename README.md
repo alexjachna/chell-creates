@@ -28,7 +28,7 @@ v3: Created 'galleries' photoshoot selection + photoshoot viewer
 
 This version contains the ability for users to select a certain photoshoot, where they will be able to view all its images similar to an 'instagram-like' grid.
 
-![image](https://github.com/alexjachna/chell-creates/assets/57778785/f513250e-2c3f-44ba-acc5-76a249c93460)
+![image](https://github.com/alexjachna/chell-creates/assets/57778785/02d9daa7-95af-4af9-9ad8-2b0b2f8f3b73)
 ![image](https://github.com/alexjachna/chell-creates/assets/57778785/b64f4705-34f6-4f8e-8d02-505674d340ff)
 
 ---
