@@ -21,3 +21,14 @@ v2: Created transition to 'galleries' page using Framer Motion
 This version is showcasing the progress towards building a 'galleries' page, where users can view certain photoshoots, and select photoshoots to view its images. The transition using Framer Motion is to make use of the image within the hero page, to act as a display when browsing images.
 
 ![image](https://github.com/alexjachna/chell-creates/assets/57778785/4592eac2-f331-4059-8fdc-44f785b40fa4)
+
+v3: Created 'galleries' photoshoot selection + photoshoot viewer
+
+This version contains the ability for users to select a certain photoshoot, where they will be able to view all its images similar to an 'instagram-like' grid.
+
+![image](https://github.com/alexjachna/chell-creates/assets/57778785/f513250e-2c3f-44ba-acc5-76a249c93460)
+![image](https://github.com/alexjachna/chell-creates/assets/57778785/b64f4705-34f6-4f8e-8d02-505674d340ff)
+
+
+
+
