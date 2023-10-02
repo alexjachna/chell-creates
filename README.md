@@ -22,6 +22,8 @@ This version is showcasing the progress towards building a 'galleries' page, whe
 
 ![image](https://github.com/alexjachna/chell-creates/assets/57778785/4592eac2-f331-4059-8fdc-44f785b40fa4)
 
+---
+
 v3: Created 'galleries' photoshoot selection + photoshoot viewer
 
 This version contains the ability for users to select a certain photoshoot, where they will be able to view all its images similar to an 'instagram-like' grid.
@@ -29,6 +31,13 @@ This version contains the ability for users to select a certain photoshoot, wher
 ![image](https://github.com/alexjachna/chell-creates/assets/57778785/f513250e-2c3f-44ba-acc5-76a249c93460)
 ![image](https://github.com/alexjachna/chell-creates/assets/57778785/b64f4705-34f6-4f8e-8d02-505674d340ff)
 
+---
 
+v4: Added 'about' and 'contact' section
+
+This version contains completed versions of the 'about' and 'contact' section, where users are able to learn more about the creator, as well as access a simple contact form to contact the creator.
+
+![image](https://github.com/alexjachna/chell-creates/assets/57778785/6c57da1a-5f83-40b6-959b-3233070f17f9)
+![image](https://github.com/alexjachna/chell-creates/assets/57778785/c9cd003d-1d8b-4e03-9e49-ad284608b0dc)
 
 
