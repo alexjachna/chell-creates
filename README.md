@@ -40,4 +40,11 @@ This version contains completed versions of the 'about' and 'contact' section, w
 ![image](https://github.com/alexjachna/chell-creates/assets/57778785/6c57da1a-5f83-40b6-959b-3233070f17f9)
 ![image](https://github.com/alexjachna/chell-creates/assets/57778785/c9cd003d-1d8b-4e03-9e49-ad284608b0dc)
 
+---
+
+v5: Added 'events' section to showcase upcoming events and photoshoots
+
+This version adds a new section, "Events", which will be used to showcase upcoming events for the creator, as well as another contact form where users can book a photoshoot at a certain event, at a certain time.
+
+![image](https://github.com/alexjachna/chell-creates/assets/57778785/798fbabd-d60e-459f-bf5b-e55193294502)
 
