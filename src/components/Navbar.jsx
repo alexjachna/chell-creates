@@ -10,32 +10,34 @@ import { Link } from "react-router-dom";
 export default function Navbar({ size, setBgsize, setBgopacity, currentPage }) {
   const [showNav, setShowNav] = useState(false);
 
-  switch (currentPage) {
-    case "home":
-      setBgsize("60%");
-      setBgopacity(0.3);
-      break;
-    case "galleries":
-      setBgsize("40%");
-      setBgopacity(0.5);
-      break;
-    case "gallery":
-      setBgsize("60%");
-      setBgopacity(0.8);
-      break;
-    case "events":
-      setBgsize("100%");
-      setBgopacity(0.3);
-      break;
-    case "about":
-      setBgsize("0%");
-      setBgopacity(0.3);
-      break;
-    case "contact":
-      setBgsize("0%");
-      setBgopacity(0.3);
-      break;
-  }
+  useEffect(() => {
+    switch (currentPage) {
+      case "home":
+        setBgsize("60%");
+        setBgopacity(0.3);
+        break;
+      case "galleries":
+        setBgsize("40%");
+        setBgopacity(0.5);
+        break;
+      case "gallery":
+        setBgsize("60%");
+        setBgopacity(0.8);
+        break;
+      case "events":
+        setBgsize("0%");
+        setBgopacity(0.3);
+        break;
+      case "about":
+        setBgsize("0%");
+        setBgopacity(0.3);
+        break;
+      case "contact":
+        setBgsize("0%");
+        setBgopacity(0.3);
+        break;
+    }
+  }, []);
 
   return (
     <div className="fixed flex justify-evenly items-center w-full h-20 bg-zinc-50 shadow-sm z-10">

@@ -1,6 +1,17 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Navbar from "../components/Navbar";
+import p1 from "../assets/p1.jpg";
+import p2 from "../assets/p2.jpg";
+import p3 from "../assets/p3.jpg";
+import p4 from "../assets/p4.jpg";
+
+const EventsImages = [
+  { id: "photoshoot 1", image: p1 },
+  { id: "photoshoot 2", image: p2 },
+  { id: "photoshoot 3", image: p3 },
+  { id: "photoshoot 4", image: p4 },
+];
 
 export default function Events({
   size,
@@ -22,9 +33,9 @@ export default function Events({
       {size >= 1024 && (
         <motion.div
           initial={{ width: bgsize, opacity: bgopacity }}
-          animate={{ width: "100%", opacity: 0.2 }}
+          animate={{ width: "0%", opacity: 0.2 }}
           exit={{
-            width: "100%",
+            width: "0%",
             opacity: 0.2,
             transition: { duration: 1 },
           }}
@@ -47,11 +58,9 @@ export default function Events({
         >
           Events.
         </motion.p>
-        <div className="w-full h-fit  flex justify-center items-center gap-12">
-          <div className="bg-red-200 w-60 h-96"></div>
-          <div className="bg-red-200 w-60 h-96"></div>
-          <div className="bg-red-200 w-60 h-96"></div>
-          <div className="bg-red-200 w-60 h-96"></div>
+
+        <div className="w-full h-fit flex justify-center items-center gap-12">
+          <div className="bg-red-200 w-24 h-24"></div>
         </div>
 
         <p className="leading-10">

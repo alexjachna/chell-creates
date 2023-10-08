@@ -51,7 +51,7 @@ export default function Contact({
         initial={{ opacity: 0 }}
         animate={{ opacity: 1, transition: { duration: 1, delay: 0.5 } }}
         exit={{ opacity: 0, transition: { duration: 1 } }}
-        className="absolute my-auto top-0 bottom-0 right-0 w-full lg:w-3/5 h-fit flex flex-col justify-center pt-24 pb-12 px-4 lg:pl-24 lg:pr-48"
+        className="absolute my-auto top-0 bottom-0 right-0 w-full lg:w-3/5 h-fit flex flex-col justify-center items-center pt-24 pb-12 px-4 lg:pl-24 lg:pr-48"
       >
         <motion.p
           initial={{ x: "-100%" }}
@@ -61,11 +61,11 @@ export default function Contact({
         >
           Contact me.
         </motion.p>
-        <p className="text-zinc-500 text-center">
+        <p className="text-zinc-500 text-center py-4">
           Feel free to get in touch with me.
         </p>
-        <form className=" flex flex-col gap-4 justify-center items-center">
-          <div className="flex flex-col w-1/2">
+        <form className="w-3/4 lg:w-full flex flex-col gap-4 justify-center items-center">
+          <div className="flex flex-col w-full">
             <label htmlFor="email">Your email</label>
             <input
               type="email"
@@ -73,7 +73,7 @@ export default function Contact({
               className="h-12 p-4 border-2 outline-none"
             />
           </div>
-          <div className="flex flex-col w-1/2">
+          <div className="flex flex-col w-full">
             <label htmlFor="subject">Subject</label>
             <input
               type="text"
@@ -81,8 +81,8 @@ export default function Contact({
               className="h-12 p-4 border-2 outline-none"
             />
           </div>
-          <div className="flex flex-col w-1/2">
-            <label htmlFor="email">Your email</label>
+          <div className="flex flex-col w-full">
+            <label htmlFor="email">Your Message</label>
             <textarea
               name=""
               id=""
