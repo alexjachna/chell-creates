@@ -61,6 +61,9 @@ export default function Events({
 
         <div className="w-full h-fit flex justify-center items-center gap-12">
           <div className="bg-red-200 w-24 h-24"></div>
+          <div className="bg-red-200 w-24 h-24"></div>
+          <div className="bg-red-200 w-24 h-24"></div>
+          <div className="bg-red-200 w-24 h-24"></div>
         </div>
 
         <p className="leading-10">
