@@ -44,40 +44,101 @@ export default function Events({
         ></motion.div>
       )}
 
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1, transition: { duration: 1, delay: 0.5 } }}
-        exit={{ opacity: 0, transition: { duration: 1 } }}
-        className="my-auto top-0 bottom-0 right-0 w-full lg:w-full h-fit flex flex-col justify-center pt-24 pb-12 px-4 lg:pl-24 lg:pr-48"
-      >
-        <motion.p
-          initial={{ x: "-100%" }}
-          animate={{ x: 0, transition: { duration: 1, delay: 0.5 } }}
-          exit={{ x: "-100%", transition: { duration: 1, delay: 0.3 } }}
-          className="text-zinc-800 font-dmSerif text-7xl lg:text-9xl p-4"
+      <div className="w-full h-screen bg-blue-200">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1, transition: { duration: 1, delay: 0.5 } }}
+          exit={{ opacity: 0, transition: { duration: 1 } }}
+          className="my-auto top-0 bottom-0 right-0 w-full lg:w-full h-fit flex flex-col justify-center pt-24 pb-12 px-4 lg:pl-24 lg:pr-48"
         >
-          Events.
-        </motion.p>
+          <motion.p
+            initial={{ x: "-100%" }}
+            animate={{ x: 0, transition: { duration: 1, delay: 0.5 } }}
+            exit={{ x: "-100%", transition: { duration: 1, delay: 0.3 } }}
+            className="text-zinc-800 font-dmSerif text-7xl lg:text-9xl p-4"
+          >
+            Events.
+          </motion.p>
 
-        <div className="w-full h-fit flex justify-center items-center gap-12">
-          <div className="bg-red-200 w-24 h-24"></div>
-          <div className="bg-red-200 w-24 h-24"></div>
-          <div className="bg-red-200 w-24 h-24"></div>
-          <div className="bg-red-200 w-24 h-24"></div>
+          <div className="w-full h-fit flex justify-center items-center gap-2 lg:gap-12">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1, delay: 0.25 }}
+              className="bg-red-200 w-48 h-96"
+            >
+              <img src={p1} alt="" className="w-full h-full object-cover" />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1, delay: 0.5 }}
+              className="bg-red-200 w-48 h-96"
+            >
+              <img src={p2} alt="" className="w-full h-full object-cover" />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1, delay: 0.75 }}
+              className="bg-red-200 w-48 h-96 hidden lg:block"
+            >
+              <img src={p3} alt="" className="w-full h-full object-cover" />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1, delay: 1 }}
+              className="bg-red-200 w-48 h-96 hidden lg:block"
+            >
+              <img src={p4} alt="" className="w-full h-full object-cover" />
+            </motion.div>
+          </div>
+
+          <p className="px-36 py-12 leading-10">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque
+            sint nobis tempora voluptates enim quibusdam sit corrupti. Explicabo
+            nobis sequi iure veritatis eum ex similique eius at quibusdam porro
+            beatae alias accusamus, illum labore dignissimos consectetur hic
+            earum consequuntur aliquam nesciunt laboriosam maiores tempora
+            consequatur. Excepturi ad voluptatum fuga. Nam?
+          </p>
+        </motion.div>
+      </div>
+      <div className="w-full h-screen flex justify-center items-center bg-red-200">
+        <div className="w-5/6 h-5/6 bg-blue-400">
+          <form className="px-36 w-full flex flex-col gap-4 justify-center items-center">
+            <div className="flex flex-col w-full">
+              <label htmlFor="email">Your email</label>
+              <input
+                type="email"
+                id="email"
+                className="h-12 p-4 border-2 outline-none"
+              />
+            </div>
+            <div className="flex flex-col w-full">
+              <label htmlFor="subject">Subject</label>
+              <input
+                type="text"
+                id="subject"
+                className="h-12 p-4 border-2 outline-none"
+              />
+            </div>
+            <div className="flex flex-col w-full">
+              <label htmlFor="email">Your Message</label>
+              <textarea
+                name=""
+                id=""
+                rows="6"
+                className="resize-none h-24 p-4 border-2 outline-none"
+              ></textarea>
+            </div>
+            <button className="bg-purple-400 hover:bg-purple-500 transition-all p-4 w-40 text-white rounded-sm shadow-md">
+              Submit
+            </button>
+          </form>
         </div>
-
-        <p className="leading-10">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque sint
-          nobis tempora voluptates enim quibusdam sit corrupti. Explicabo nobis
-          sequi iure veritatis eum ex similique eius at quibusdam porro beatae
-          alias accusamus, illum labore dignissimos consectetur hic earum
-          consequuntur aliquam nesciunt laboriosam maiores tempora consequatur.
-          Excepturi ad voluptatum fuga. Nam?
-        </p>
-      </motion.div>
-
-      <div className="w-full h-screen bg-blue-200"></div>
-      <div className="w-full h-screen bg-red-200"></div>
+      </div>
     </div>
   );
 }
