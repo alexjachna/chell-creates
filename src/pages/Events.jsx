@@ -44,7 +44,7 @@ export default function Events({
         ></motion.div>
       )}
 
-      <div className="w-full h-screen bg-blue-200">
+      <div className="w-full h-screen ">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1, transition: { duration: 1, delay: 0.5 } }}
@@ -65,7 +65,7 @@ export default function Events({
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1, delay: 0.25 }}
-              className="bg-red-200 w-48 h-96"
+              className="w-48 h-96"
             >
               <img src={p1} alt="" className="w-full h-full object-cover" />
             </motion.div>
@@ -73,7 +73,7 @@ export default function Events({
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1, delay: 0.5 }}
-              className="bg-red-200 w-48 h-96"
+              className="w-48 h-96"
             >
               <img src={p2} alt="" className="w-full h-full object-cover" />
             </motion.div>
@@ -81,7 +81,7 @@ export default function Events({
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1, delay: 0.75 }}
-              className="bg-red-200 w-48 h-96 hidden lg:block"
+              className="w-48 h-96 hidden lg:block"
             >
               <img src={p3} alt="" className="w-full h-full object-cover" />
             </motion.div>
@@ -89,7 +89,7 @@ export default function Events({
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1, delay: 1 }}
-              className="bg-red-200 w-48 h-96 hidden lg:block"
+              className="w-48 h-96 hidden lg:block"
             >
               <img src={p4} alt="" className="w-full h-full object-cover" />
             </motion.div>
@@ -105,9 +105,18 @@ export default function Events({
           </p>
         </motion.div>
       </div>
-      <div className="w-full h-screen flex justify-center items-center bg-red-200">
-        <div className="w-5/6 h-5/6 bg-blue-400">
-          <form className="px-36 w-full flex flex-col gap-4 justify-center items-center">
+
+      <div className="w-full h-fit px-36 pt-12 pb-36 flex justify-center items-center">
+        <div className="w-1/2 h-5/6 flex flex-col justify-center ">
+          <p className="text-zinc-800 font-dmSerif text-7xl lg:text-9xl p-4">
+            Book a shoot.
+          </p>
+          <p className="px-36 py-12 leading-10">
+            Want a photoshoot at the next con? Book a photoshoot with me here.
+          </p>
+        </div>
+        <div className="w-1/2 h-5/6  flex justify-center">
+          <form className="w-full flex flex-col gap-4 justify-center items-center">
             <div className="flex flex-col w-full">
               <label htmlFor="email">Your email</label>
               <input
